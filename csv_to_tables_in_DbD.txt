@@ -1,7 +1,25 @@
+#closely examine csv data files 
+#list out column headers as rows under the csv title. 
+#title of csv file is the header of table (VERBATIM)
+#define data types of each "header" as varchar, int, or date
+#pk = primary key = "what the rest of table relies on"
+#fk = foreign key = "an alternate route to the same information from a different table"
+#NOTE: fk's are shared data between tables and will provide the basis of inner joins  
+#"-" = connecter between tables
+#">-" = unidirectional connector between tables
+#IMPORTANT: must maintain referential integrity
+#when making connections between table, define which table it goes to and the corresponding #row/column. 
+# AKA => find the connections/overlap between tables
+
+
+#TABLES: 
+
 Departments
 -
 dept_no varchar pk
 dept_name varchar
+#department name is dependent on dept_no
+#managers belong to departments
 
 
 Employees
@@ -17,32 +35,34 @@ hire_date date
 Managers
 -
 dept_no varchar pk fk - Departments.dept_no
-emp_no int fk - Employees.emp_no
-from_date date
-to_date date
+emp_no int pk fk - Employees.emp_no
+#all managers must be employees.
+#managers manage departments
+#departments have employees
 
 
 Dept_Emp
 -
 dept_no varchar pk fk >- Departments.dept_no
 emp_no int pk fk >- Employees.emp_no
-from_date date
-to_date date
-
+#Departments have employees, but not all employees are managers.
 
 Titles
 -
 emp_no int pk fk >- Employees.emp_no
-# Adds pk restraint to title column
 title varchar pk
-# Adds pk restraint to from_date column
-from_date date pk
-to_date date
+#is an employee an employee if they don't have a job title?
+
 
 
 Salaries
 -
 emp_no int pk fk - Employees.emp_no
 salary int
-from_date date
-to_date date
+#employees have salaries, salaries can't have employees
+
+#export ERD as PNG image
+#export as PostgreSQL 
+
+#exporting as PostgreSQL will convert this code to SOL language to be imported into PostgreSQL
+#then, import the CVS files to corresponding table
