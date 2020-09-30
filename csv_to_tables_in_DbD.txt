@@ -5,8 +5,8 @@
 #pk = primary key = "what the rest of table relies on"
 #fk = foreign key = "an alternate route to the same information from a different table"
 #NOTE: fk's are shared data between tables and will provide the basis of inner joins  
-#"-" = connecter between tables
-#">-" = unidirectional connector between tables
+#"-" = connecter between tables [one-to-one]
+#">-" = unidirectional connector between tables [one-to-many]
 #IMPORTANT: must maintain referential integrity
 #when making connections between table, define which table it goes to and the corresponding #row/column. 
 # AKA => find the connections/overlap between tables
