@@ -1,12 +1,13 @@
-#closely examine csv data files 
+## METHODOLOGY & NOTES:
+#closely examine csv data files, "familiarize yourself with the data"
 #list out column headers as rows under the csv title. 
 #title of csv file is the header of table (VERBATIM)
-#define data types of each "header" as varchar, int, or date
+#define data types of each "header" as varchar, int, boolean, or date
 #pk = primary key = "what the rest of table relies on"
 #fk = foreign key = "an alternate route to the same information from a different table"
 #NOTE: fk's are shared data between tables and will provide the basis of inner joins  
 #"-" = connecter between tables [one-to-one]
-#">-" = unidirectional connector between tables [one-to-many]
+#">-" = ""unidirectional"" connector between tables [one-to-many]
 #IMPORTANT: must maintain referential integrity
 #when making connections between table, define which table it goes to and the corresponding #row/column. 
 # AKA => find the connections/overlap between tables
@@ -61,8 +62,12 @@ emp_no int pk fk - Employees.emp_no
 salary int
 #employees have salaries, salaries can't have employees
 
+
+#CONCLUDING REMARKS:
+
 #export ERD as PNG image
 #export as PostgreSQL 
 
 #exporting as PostgreSQL will convert this code to SOL language to be imported into PostgreSQL
+#=>this will become the table schema
 #then, import the CVS files to corresponding table
