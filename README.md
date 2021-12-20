@@ -18,7 +18,7 @@ First, inspect the CSVs and sketch out an ERD of the tables. I used http://www.q
 #### Data Analysis
 With the complete database, produce the following:
 1. List the following details of each employee: employee number, last name, first name, sex, and salary. 
-```
+```ruby
 select e.emp_no, e.first_name, e.last_name, e.gender, s.Salary
 from public."Employees" e
 inner join public."Salaries" s on e.emp_no = s.emp_no
