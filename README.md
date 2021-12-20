@@ -7,7 +7,7 @@ Conduct research on employees of the corporation from the 1980s and 1990s. Howev
 #### Data Modeling
 First, inspect the CSVs and sketch out an ERD of the tables. I used http://www.quickdatabasediagrams.com.
 
-![ERD](.png)
+![ERD](rearranged_ERD.png)
 
 
 #### Data Engineering
